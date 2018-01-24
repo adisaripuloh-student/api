@@ -10,8 +10,14 @@ Rails.application.routes.draw do
     get 'create', to: 'admin#create', as: :adminCreate
     post 'store', to: 'admin#store', as: :adminStore
     get 'show/:id', to: 'admin#show', as: :adminShow
-    get 'edit/:id', to: 'admin#edit', as: :adminEdit
-    post 'update', to: 'admin#edit', as: :adminUpdate
     get 'destroy/:id', to: 'admin#destroy', as: :adminDestroy
+  end
+
+  scope '/api' do
+    get 'unsurs', to: 'api#all'
+    get 'unsur/:id', to: 'api#show'
+    get 'search/:key', to: 'api#search'
+    get 'golongan/:golongan', to: 'api#golongan'
+    get 'periode/:periode', to: 'api#periode'
   end
 end

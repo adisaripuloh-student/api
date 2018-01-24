@@ -23,12 +23,6 @@ class AdminController < ApplicationController
     @unsur = Unsur.find(params[:id])
   end
 
-  def edit
-  end
-
-  def update
-  end
-
   def destroy
     @unsur = Unsur.find(params[:id])
     @unsur.ikon.destroy
