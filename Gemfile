@@ -32,6 +32,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Bootstrap CSS
 gem 'bootstrap-sass', '~> 3.3.7'
 
+gem "paperclip", "~> 5.0.0"
+gem 'simple_form'
+
 # jquery
 gem 'jquery-rails'
 

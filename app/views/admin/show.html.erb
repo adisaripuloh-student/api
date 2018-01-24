@@ -1,0 +1,41 @@
+<div class="col-sm-4 col-sm-offset-4">
+  <%= image_tag @unsur.ikon.url, :alt => "Tabel Periodik", :style => "margin-bottom: 20px" %>
+  <table class="table">
+    <tr>
+      <td>Simbol</td>
+      <td>:</td>
+      <td><%= @unsur.simbol %></td>
+    </tr>
+    <tr>
+      <td>Nama Unsur</td>
+      <td>:</td>
+      <td><%= @unsur.nama_unsur %></td>
+    </tr>
+    <tr>
+      <td>Masa Atom</td>
+      <td>:</td>
+      <td><%= @unsur.masa_atom %></td>
+    </tr>
+    <tr>
+      <td>Nomor Atom</td>
+      <td>:</td>
+      <td><%= @unsur.nomor_atom %></td>
+    </tr>
+    <tr>
+      <td>Deskripsi</td>
+      <td>:</td>
+      <td><%= @unsur.deskripsi %></td>
+    </tr>
+    <tr>
+      <td>Golongan</td>
+      <td>:</td>
+      <td><%= @unsur.golongan %></td>
+    </tr>
+    <tr>
+      <td>Periode</td>
+      <td>:</td>
+      <td><%= @unsur.periode %></td>
+    </tr>
+  </table>
+  <%= link_to "Kembali", admin_path, :class => "btn btn-danger btn-sm" %>
+</div>

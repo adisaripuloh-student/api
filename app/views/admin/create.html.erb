@@ -1,0 +1,77 @@
+<h1 align="center">Tambah Unsur</h1>
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <%= form_for Unsur.new, :html => {class: "form-horizontal", role: "form"}, url: adminStore_path, method: :post, multipart: true do |f| %>
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :simbol %>
+        </div>
+        <div class="col-sm-8">
+          <%= f.text_field :simbol, class: "form-control", placeholder: "Simbol", autofocus: true %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :nama_unsur %>
+        </div>
+        <div class="col-sm-8">
+          <%= f.text_field :nama_unsur, class: "form-control", placeholder: "Nama Unsur" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :masa_atom %>
+        </div>
+        <div class="col-sm-8">
+          <%= f.text_field :masa_atom, class: "form-control", placeholder: "Masa Atom" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :nomor_atom %>
+        </div>
+        <div class="col-sm-8">
+          <%= f.number_field :nomor_atom, class: "form-control", placeholder: "Nama Unsur" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :deskripsi %>
+        </div>
+        <div class="col-sm-8">
+          <%= f.text_area :deskripsi, class: "form-control", placeholder: "Deskripsi", style: "resize: none;", rows: "3" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :golongan %>
+        </div>
+        <div class="col-sm-8">
+          <%= f.select(:golongan, (1..16).collect {|n| [ n.to_i, n ] }, {:include_blank => "Golongan"}, {:class => "form-control"})%>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :periode %>
+        </div>
+        <div class="col-sm-8">
+          <%= f.select(:periode, (1..7).collect {|n| [ n.to_i, n ] }, {:include_blank => "Periode"}, {:class => "form-control"})%>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :ikon %>
+        </div>
+        <div class="col-sm-8">
+          <%= f.file_field :ikon, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-6 col-sm-offset-3">
+          <%= f.submit "Simpan", class: "btn btn-primary btn-sm" %>
+          <%= link_to "Batal", admin_path, :class => "btn btn-danger btn-sm" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

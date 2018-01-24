@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def new
     if logged_in?
-      redirect_to root_path
+      redirect_to admin_path
     end
   end
 
@@ -9,10 +9,10 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:session][:username])
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      redirect_to root_path
+      redirect_to admin_path
     else
       flash[:danger] = "username dan password tanya ke adisaripuloh@gmail.com"
-      redirect_to login_path
+      redirect_to root_path
     end
   end
 

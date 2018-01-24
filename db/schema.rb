@@ -10,9 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180124050309) do
+ActiveRecord::Schema.define(version: 20180124081828) do
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "unsurs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "simbol"
+    t.string "nama_unsur"
+    t.string "masa_atom"
+    t.integer "nomor_atom"
+    t.text "deskripsi"
+    t.integer "golongan"
+    t.integer "periode"
+    t.string "ikon_file_name"
+    t.string "ikon_content_type"
+    t.integer "ikon_file_size"
+    t.datetime "ikon_updated_at"
+  end
+
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "username"
     t.string "password_digest"
   end

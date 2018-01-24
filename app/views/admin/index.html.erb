@@ -1,0 +1,33 @@
+<h1>Daftar Unsur</h1>
+<%= link_to "Tambah Unsur", adminCreate_path, :class => "btn btn-primary btn-sm" %>
+
+<table class="table table-responsive table-hover table-striped">
+  <thead>
+    <tr>
+      <th>Simbol</th>
+      <th>Nama Unsur</th>
+      <th>Masa Atom</th>
+      <th>Nomor Atom</th>
+      <th>Golongan</th>
+      <th>Priode</th>
+      <th class="text-center">Aksi</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @unsurs.each do |u| %>
+    <tr>
+      <td><%= u.simbol %></td>
+      <td><%= u.nama_unsur %></td>
+      <td><%= u.masa_atom %></td>
+      <td><%= u.nomor_atom %></td>
+      <td><%= u.golongan %></td>
+      <td><%= u.periode %></td>
+      <td>
+        <%= link_to "Lihat", adminShow_path(u.id), :class => "btn btn-default btn-sm" %>
+        <%= link_to "Ubah", adminEdit_path(u.id), :class => "btn btn-primary btn-sm" %>
+        <%= link_to "Hapus", adminDestroy_path(u.id), :class => "btn btn-danger btn-sm" %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
