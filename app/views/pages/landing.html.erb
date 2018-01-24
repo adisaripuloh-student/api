@@ -1,2 +1,7 @@
-<h1>Pages#landing</h1>
-<p>Find me in app/views/pages/landing.html.erb</p>
+<%= image_tag "favicon.png", :alt => "Tabel Periodik", :style => "margin-top: 20px" %>
+<h1>{API Sismul}</h1>
+<p>{"Akses kontak": "<a href="mailto:adisaripuloh@gmail.com">Adi Saripuloh</a>"}</p>
+
+<% if logged_in? %>
+  <%= link_to 'Keluar', logout_path, method: :delete%>
+<% end %>
