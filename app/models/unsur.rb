@@ -8,7 +8,7 @@ class Unsur < ApplicationRecord
   validates :masa_atom, presence: true
   validates :nomor_atom, presence: true
   validates :deskripsi, presence: true
-  validates :golongan, presence: true
-  validates :periode, presence: true
+  # validates :golongan, presence: true
+  # validates :periode, presence: true
   validates :ikon, presence: true
 end
