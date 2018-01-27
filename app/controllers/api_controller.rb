@@ -23,13 +23,13 @@ class ApiController < ApplicationController
 
   # GET /golongan/1
   def golongan
-    @unsur = Unsur.find(params[:golongan])
+    @unsur = Unsur.where('golongan =', params[:golongan])
     render json: @unsur
   end
 
   # GET /periode/1
   def periode
-    @unsur = Unsur.find(params[:periode])
+    @unsur = Unsur.where('periode =', params[:golongan])
     render json: @unsur
   end
 
