@@ -15,8 +15,7 @@ class ApiController < ApplicationController
 
   # GET /search
   def search
-    key = "%#{params[:key]}%"
-    @unsurs = Unsur.select('id, simbol, nama_unsur, golongan, periode, ikon_file_name').where('simbol LIKE ? OR nama_unsur LIKE ? OR nomor_atom LIKE ? OR masa_atom LIKE ? OR deskripsi LIKE ?', key, key, key, key, key).order(:nama_unsur)
+    @unsurs = Unsur.where(:nama_unsur => params[:key]).limit(1)
 
     render json: @unsurs
   end
