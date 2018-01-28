@@ -18,7 +18,7 @@ class ApiController < ApplicationController
     key = "%#{params[:key]}%"
     @unsur = Unsur.where('nama_unsur LIKE ?', key).limit(1)
 
-    render json: @unsur
+    render json: JSON.parse(@unsur)
   end
 
   # GET /golongan/1
