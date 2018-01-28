@@ -29,7 +29,7 @@ class ApiController < ApplicationController
 
   # GET /periode/1
   def periode
-    @unsur = Unsur.where(:periode=> params[:golongan])
+    @unsur = Unsur.where(:periode=> params[:periode])
     render json: @unsur
   end
 
